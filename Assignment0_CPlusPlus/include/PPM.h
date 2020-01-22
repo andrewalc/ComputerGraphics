@@ -11,6 +11,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <sstream>  // std::istringstream
 #include <string>
 #include <vector>
 
@@ -31,7 +32,7 @@ class PPM {
     void setPixel(int x, int y, int R, int G, int B);
     // Returns the raw pixel data in an array.
     // You may research what 'inline' does.
-    inline unsigned char* pixelData() { return m_PixelData; }
+    inline unsigned int* pixelData() { return m_PixelData; }
     // Returns image width
     inline int getWidth() { return m_width; }
     // Returns image height
@@ -41,10 +42,15 @@ class PPM {
    private:
     // Store the raw pixel data here
     // Data is R,G,B format
-    unsigned char* m_PixelData;
+    unsigned int* m_PixelData;
+    unsigned int pixelDataSize;
     // Store width and height of image.
+    std::string header;
+    std::string comment;
+
     int m_width{0};
     int m_height{0};
+    int max_value{0};
 };
 
 #endif

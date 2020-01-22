@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment0_CPlusPlus/src/ppm.cpp
+PPM.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment0_CPlusPlus/src/PPM.h
+
+include/PPM.h
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+
