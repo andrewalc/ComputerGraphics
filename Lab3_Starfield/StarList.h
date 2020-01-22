@@ -1,31 +1,30 @@
 #pragma once
 
-#include <QtCore/QVector>
+#include <math.h>
 #include <QtCore/QRandomGenerator>
+#include <QtCore/QVector>
 
 #include <QtGui/QColor>
 #include <QtGui/QImage>
 
-struct Star
-{
-	float x, y, z;
-	float speed;
-	QColor color;
+struct Star {
+    float x, y, z;
+    float speed;
+    QColor color;
 };
 
-class StarList
-{
-public:
-	StarList(unsigned int numStars, float spread, float maxSpeed);
-	virtual ~StarList();
+class StarList {
+   public:
+    StarList(unsigned int numStars, float spread, float maxSpeed);
+    virtual ~StarList();
 
-	// Update our stars and render them to our displayed image.
-	void updateAndRender(QImage& image, float delta, const QSize& windowSize);
-	void initStar(unsigned int idx);
+    // Update our stars and render them to our displayed image.
+    void updateAndRender(QImage& image, float delta, const QSize& windowSize);
+    void initStar(unsigned int idx);
 
-private:
-	QVector<Star> stars_;
-	float spread_;
-	float speed_;
-	QRandomGenerator randomGen_;
+   private:
+    QVector<Star> stars_;
+    float spread_;
+    float speed_;
+    QRandomGenerator randomGen_;
 };

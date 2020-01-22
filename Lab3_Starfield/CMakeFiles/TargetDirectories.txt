@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab3_Starfield/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab3_Starfield/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab3_Starfield/CMakeFiles/Lab2.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab3_Starfield/CMakeFiles/Lab2_autogen.dir
