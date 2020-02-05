@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab5_Part2/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab5_Part2/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab5_Part2/CMakeFiles/Lab.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab5_Part2/CMakeFiles/Lab_autogen.dir

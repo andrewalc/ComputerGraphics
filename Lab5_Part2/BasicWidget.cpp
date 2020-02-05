@@ -2,6 +2,7 @@
 
 //////////////////////////////////////////////////////////////////////
 // Publics
+bool TRIANGLE = true;
 #if USE_QT_OPENGL
   BasicWidget::BasicWidget(QWidget* parent) : QOpenGLWidget(parent), vbo_(QOpenGLBuffer::VertexBuffer), cbo_(QOpenGLBuffer::VertexBuffer), ibo_(QOpenGLBuffer::IndexBuffer)
 #else
@@ -144,9 +145,11 @@ void BasicWidget::keyReleaseEvent(QKeyEvent* keyEvent)
   // TODO
   // Handle key events here.
   if (keyEvent->key() == Qt::Key_Left) {
+    TRIANGLE = true;
     qDebug() << "Left Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else if (keyEvent->key() == Qt::Key_Right) {
+    TRIANGLE = false;
     qDebug() << "Right Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else {
@@ -206,8 +209,18 @@ void BasicWidget::initializeGL()
   vbo_.allocate(verts, 12 * sizeof(GL_FLOAT));
 
   // TODO:  Generate our color buffer
+  cbo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
+  cbo_.create();
+  // Bind our vbo inside our vao
+  cbo_.bind();
+  cbo_.allocate(colors, 16 * sizeof(GL_FLOAT));  
   // ENDTODO
   // TODO:  Generate our index buffer
+  ibo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
+  ibo_.create();
+  // Bind our vbo inside our vao
+  ibo_.bind();
+  ibo_.allocate(idx, 6 * sizeof(GL_FLOAT));  
   // ENDTODO
 
   // Create a VAO to keep track of things for us.
@@ -232,8 +245,14 @@ void BasicWidget::initializeGL()
   glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GL_FLOAT), verts, GL_STATIC_DRAW);
 
   // TODO:  Generate our color buffer
+  glGenBuffers(1, &cbo_ID);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cbo_ID);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, 16 * sizeof(GL_FLOAT), colors, GL_STATIC_DRAW);
   // ENDTODO
   // TODO:  Generate our index buffer
+  glGenBuffers(1, &ibo_ID);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo_ID);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, 6 * sizeof(GL_FLOAT), idx, GL_STATIC_DRAW);
   // ENDTODO
 
   vao_.release();
@@ -260,7 +279,7 @@ void BasicWidget::paintGL()
   shaderProgram_.bind();
   vao_.bind();
   // TODO: Change number of indices drawn
-  glDrawElements(GL_TRIANGLES, ??, GL_UNSIGNED_INT, 0);
+  glDrawElements(GL_TRIANGLES, TRIANGLE ? 3 : 6, GL_UNSIGNED_INT, 0);
   // ENDTODO
   vao_.release();
   shaderProgram_.release();
@@ -287,7 +306,7 @@ void BasicWidget::paintGL()
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboID_);
   // Render
   // TODO: Change number of indices drawn
-  glDrawElements(GL_TRIANGLES, ??, GL_UNSIGNED_INT, nullptr);
+  glDrawElements(GL_TRIANGLES, TRIANGLE ? 3 : 6, GL_UNSIGNED_INT, nullptr);
   // ENDTODO
   // Unbind everything
   glDisableVertexAttribArray(0);
