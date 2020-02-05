@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab4_MatrixTransformations/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab4_MatrixTransformations/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab4_MatrixTransformations/CMakeFiles/Lab.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab4_MatrixTransformations/CMakeFiles/Lab_autogen.dir
