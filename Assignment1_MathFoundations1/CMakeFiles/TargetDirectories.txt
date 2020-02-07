@@ -1,0 +1,3 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment1_MathFoundations1/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment1_MathFoundations1/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment1_MathFoundations1/CMakeFiles/Assignment1.dir

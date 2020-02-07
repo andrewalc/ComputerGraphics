@@ -41,8 +41,12 @@ public:
 
     // Makes the matrix an identity matrix
     void identity(){
-        // TODO:
-    }
+		//TODO
+		n[0][0] = 1; n[0][1] = 0; n[0][2] = 0; n[0][3] = 0;
+		n[1][0] = 0; n[1][1] = 1; n[1][2] = 0; n[1][3] = 0;
+		n[2][0] = 0; n[2][1] = 0; n[2][2] = 1; n[2][3] = 0;
+		n[3][0] = 0; n[3][1] = 0; n[3][2] = 0; n[3][3] = 1;
+	}
 
     // Index operator with two dimensions
     // Example: M(1,1) returns row 1 and column 1 of matrix M.
@@ -69,23 +73,47 @@ public:
     // Make a matrix rotate about various axis
     Matrix4f MakeRotationX(float t){
         // TODO:
-        return(Matrix4f()); // You will need to modify this.
-                            // When you test, test against glm_gtx_transform
+		Matrix4f mat4;
+
+		mat4[0][0] = 1;  mat4[0][1] = 0;	  mat4[0][2] = 0;		 mat4[0][3] = 0;
+		mat4[1][0] = 0;  mat4[1][1] = cos(t); mat4[1][2] = -sin(t);  mat4[1][3] = 0;
+		mat4[2][0] = 0;  mat4[2][1] = sin(t); mat4[2][2] = cos(t);	 mat4[2][3] = 0;
+		mat4[3][0] = 0;  mat4[3][1] = 0;	  mat4[3][2] = 0;		 mat4[3][3] = 1;
+
+		return mat4;
     }
     Matrix4f MakeRotationY(float t){
         // TODO:
-        return(Matrix4f()); // You will need to modify this.
-                            // When you test, test against glm_gtx_transform
+		Matrix4f mat4;
+
+		mat4[0][0] = cos(t);  mat4[0][1] = 0; mat4[0][2] = sin(t);  mat4[0][3] = 0;
+		mat4[1][0] = 0;		  mat4[1][1] = 1; mat4[1][2] = 0;		mat4[1][3] = 0;
+		mat4[2][0] = -sin(t); mat4[2][1] = 0; mat4[2][2] = cos(t);	mat4[2][3] = 0;
+		mat4[3][0] = 0;		  mat4[3][1] = 0; mat4[3][2] = 0;		mat4[3][3] = 1;
+
+		return mat4;
     }
     Matrix4f MakeRotationZ(float t){
         // TODO:
-        return(Matrix4f()); // You will need to modify this.
-                            // When you test, test against glm_gtx_transform
+		Matrix4f mat4;
+
+		mat4[0][0] = cos(t);  mat4[0][1] = -sin(t);	 mat4[0][2] = 0;  mat4[0][3] = 0;
+		mat4[1][0] = sin(t);  mat4[1][1] = cos(t);	 mat4[1][2] = 0;  mat4[1][3] = 0;
+		mat4[2][0] = 0;		  mat4[2][1] = 0;		 mat4[2][2] = 0;  mat4[2][3] = 0;
+		mat4[3][0] = 0;		  mat4[3][1] = 0;		 mat4[3][2] = 0;  mat4[3][3] = 1;
+
+		return mat4;
     }
     Matrix4f MakeScale(float sx,float sy, float sz){
         // TODO:
-        return(Matrix4f()); // You will need to modify this.
-                            // When you test, test against glm_gtx_transform
+		Matrix4f mat4;
+
+		mat4[0][0] = sx; mat4[0][1] = 0;  mat4[0][2] = 0;  mat4[0][3] = 0;
+		mat4[1][0] = 0;  mat4[1][1] = sy; mat4[1][2] = 0;  mat4[1][3] = 0;
+		mat4[2][0] = 0;  mat4[2][1] = 0;  mat4[2][2] = sz; mat4[2][3] = 0;
+		mat4[3][0] = 0;  mat4[3][1] = 0;  mat4[3][2] = 0;  mat4[3][3] = 1;
+
+        return mat4;
     }
 
 
@@ -93,8 +121,39 @@ public:
 
 // Matrix Multiplication
 Matrix4f operator *(const Matrix4f& A, const Matrix4f& B){
-  // TODO:
+	//TODO
   Matrix4f mat4;
+
+  //define the columns in b so that we can reuse them.
+  Vector4f b0Col = Vector4f(B(0, 0), B(0, 1), B(0, 2), B(0, 3));
+  Vector4f b1Col = Vector4f(B(1, 0), B(1, 1), B(1, 2), B(1, 3));
+  Vector4f b2Col = Vector4f(B(2, 0), B(2, 1), B(2, 2), B(2, 3));
+  Vector4f b3Col = Vector4f(B(3, 0), B(3, 1), B(3, 2), B(3, 3));
+
+  //Top Row, L->R
+  mat4[0][0] = Dot(A[0], b0Col);
+  mat4[0][1] = Dot(A[0], b1Col);
+  mat4[0][2] = Dot(A[0], b2Col);
+  mat4[0][3] = Dot(A[0], b3Col);
+
+  //Second Row, L->R
+  mat4[1][0] = Dot(A[1], b0Col);
+  mat4[1][1] = Dot(A[1], b1Col);
+  mat4[1][2] = Dot(A[1], b2Col);
+  mat4[1][3] = Dot(A[1], b3Col);
+
+
+  //Third Row, L->R
+  mat4[2][0] = Dot(A[2], b0Col);
+  mat4[2][1] = Dot(A[2], b1Col);
+  mat4[2][2] = Dot(A[2], b2Col);
+  mat4[2][3] = Dot(A[2], b3Col);
+
+  //Bottom Row, L->R
+  mat4[3][0] = Dot(A[3], b0Col);
+  mat4[3][1] = Dot(A[3], b1Col);
+  mat4[3][2] = Dot(A[3], b2Col);
+  mat4[3][3] = Dot(A[3], b3Col);
 
   return mat4;
 }
@@ -102,8 +161,19 @@ Matrix4f operator *(const Matrix4f& A, const Matrix4f& B){
 // Matrix multiply by a vector
 
 Vector4f operator *(const Matrix4f& M, const Vector4f& v){
-  // TODO:
+	//TODO
   Vector4f vec;
+
+  //define the columns in M so that we can reuse them.
+  Vector4f m0Col = Vector4f(M(0, 0), M(0, 1), M(0, 2), M(0, 3));
+  Vector4f m1Col = Vector4f(M(1, 0), M(1, 1), M(1, 2), M(1, 3));
+  Vector4f m2Col = Vector4f(M(2, 0), M(2, 1), M(2, 2), M(2, 3));
+  Vector4f m3Col = Vector4f(M(3, 0), M(3, 1), M(3, 2), M(3, 3));
+
+  vec.x = Dot(v, m0Col);
+  vec.y = Dot(v, m1Col);
+  vec.z = Dot(v, m2Col);
+  vec.w = Dot(v, m3Col);
 
   return vec;
 }
