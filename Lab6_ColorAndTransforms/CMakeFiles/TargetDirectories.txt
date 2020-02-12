@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab6_ColorAndTransforms/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab6_ColorAndTransforms/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab6_ColorAndTransforms/CMakeFiles/App.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab6_ColorAndTransforms/CMakeFiles/App_autogen.dir
