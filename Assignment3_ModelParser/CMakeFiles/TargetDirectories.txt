@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment_autogen.dir

@@ -1,6 +1,7 @@
 #include "Application.h"
 
 #include "BasicWidget.h"
+#include "Lab5Widget.h"
 
 Application::Application(QWidget* parent) : QMainWindow(parent)
 {
@@ -18,6 +19,7 @@ void Application::buildGui()
   QAction* exit = file->addAction("Quit", [this]() {close();});
 
   // Our basic widget.
-  BasicWidget* widget = new BasicWidget(this);
+  // BasicWidget* widget = new BasicWidget(this);
+  Lab5Widget* widget = new Lab5Widget(this);
   setCentralWidget(widget);
 }

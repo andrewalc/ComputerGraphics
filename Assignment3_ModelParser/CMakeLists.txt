@@ -17,6 +17,7 @@ include_directories(
 )
 
 set(srcs
+  Lab5Widget.cpp
   BasicWidget.cpp
   Application.cpp
   main.cpp
