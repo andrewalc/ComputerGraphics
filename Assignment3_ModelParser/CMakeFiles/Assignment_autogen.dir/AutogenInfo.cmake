@@ -11,7 +11,7 @@ set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Assignment_autogen")
 set(AM_INCLUDE_DIR "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Assignment_autogen/include")
 # Files
-set(AM_SOURCES "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Application.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/main.cpp")
+set(AM_SOURCES "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Application.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp;/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/main.cpp")
 set(AM_HEADERS "")
 set(AM_SETTINGS_FILE "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment_autogen.dir/AutogenOldSettings.txt")
 # Qt

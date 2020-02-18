@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Assignment_autogen/mocs_compilation.cpp" "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.o"
   "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.cpp" "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir/BasicWidget.cpp.o"
   "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp" "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir/Lab5Widget.cpp.o"
+  "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp" "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir/ObjParse.cpp.o"
   "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/main.cpp" "/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles/Assignment.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

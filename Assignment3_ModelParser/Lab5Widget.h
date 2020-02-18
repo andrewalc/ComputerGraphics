@@ -3,7 +3,7 @@
 #include <QtGui>
 #include <QtWidgets>
 #include <QtOpenGL>
-
+#include "ObjParse.h"
 // TODO:  This macro should work when both true AND false
 #define USE_QT_OPENGL true
 // ENDTODO
@@ -49,10 +49,15 @@ protected:
   
 public:
  Lab5Widget(QWidget* parent=nullptr);
- void loadData(const GLfloat* verts, const GLfloat* colors, const GLuint* idx);
+ //void loadData(std::vector<float> verts, std::vector<float> colors, std::vector<int> idx);
+void loadData(std::vector<float> verts, std::vector<int> idx);
+
  void releaseBuffers();
  virtual ~Lab5Widget();
   
   // Make sure we have some size that makes sense.
   QSize sizeHint() const {return QSize(800,600);}
+  std::vector<float> cubeVerts;
+  std::vector<float> cubeVertNormals;
+  std::vector<std::vector<int>> cubeFaces;
 };

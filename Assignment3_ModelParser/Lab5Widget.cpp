@@ -41,6 +41,22 @@ bool TRIANGLE = true;
 #endif
 {
   setFocusPolicy(Qt::StrongFocus);
+  // Load Cube
+  ObjParse cubeParse = ObjParse();
+  cubeParse.parse("objects/cube.obj");
+  cubeVerts = cubeParse.verts;
+  cubeVertNormals = cubeParse.vertNormals;
+  cubeFaces = cubeParse.faces;
+  // for (int i = 0; i < cubeParse.faces.size(); i++){
+  //   if (cubeParse.faces[i].size() > 0) {
+  //     GLfloat face[cubeParse.faces[i].size()];
+  //     for (int j = 0; j < cubeParse.faces[i].size() > 0) {
+  //     }
+  //   }
+  // }
+  // for (int i = 0; i < cubeParse.verts.size(); i++) {
+  //   std::cout << cubeVerts[i] << "\n";
+  // }
 }
 
 void Lab5Widget::releaseBuffers() {
@@ -182,13 +198,24 @@ void Lab5Widget::keyReleaseEvent(QKeyEvent* keyEvent)
   if (keyEvent->key() == Qt::Key_Left) {
     // TRIANGLE = true;
     releaseBuffers();
-    loadData(verts, colors, idx);
+    // loadData(verts, colors, idx);
     qDebug() << "Left Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else if (keyEvent->key() == Qt::Key_Right) {
     // TRIANGLE = false;
     releaseBuffers();
-    loadData(verts, newcolors, idx);
+    std::vector<int> cubeIndexes; 
+    for (int i = 0; i < cubeFaces.size(); i++){
+      if (cubeFaces[i].size() > 0) {
+        for (int j = 0; j < cubeFaces[i].size(); j++) {
+          if (j % 2 == 0) {
+            std::cout << cubeFaces[i][j] << "\n";
+            cubeIndexes.push_back(cubeFaces[i][j]);
+          }
+        }
+      }
+    }
+    loadData(cubeVerts, cubeIndexes);
     qDebug() << "Right Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else {
@@ -197,33 +224,45 @@ void Lab5Widget::keyReleaseEvent(QKeyEvent* keyEvent)
   // ENDTODO
 }
 
-void Lab5Widget::loadData(const GLfloat* verts, const GLfloat* colors, const GLuint* idx) {
+//void Lab5Widget::loadData(std::vector<float> verts, std::vector<float> colors, std::vector<int> idx) {
+void Lab5Widget::loadData(std::vector<float> verts, std::vector<int> idx) {
   releaseBuffers();
+  
+  GLfloat convertVerts[verts.size()];
+  std::copy(verts.begin(), verts.end(), convertVerts);
+
+  // normals
+  // GLfloat convertVertNormals[vertNormals.size()];
+  // std::copy(vertNormals.begin(), vertNormals.end(), convertVertNormals);
+
+  GLfloat convertIndex[idx.size()];
+  std::copy(idx.begin(), idx.end(), convertIndex);
+
   // Temporary bind of our shader.
   shaderProgram_.bind();
 
   // Bind our vbo inside our vao
   vbo_.bind();
-  vbo_.allocate(verts, 12 * sizeof(GL_FLOAT));
+  vbo_.allocate(convertVerts, verts.size() * sizeof(GL_FLOAT));
 
 
-  // Bind our vbo inside our vao
-  cbo_.bind();
-  cbo_.allocate(colors, 16 * sizeof(GL_FLOAT));  
-  // ENDTODO
+  // //Bind our vbo inside our vao
+  // cbo_.bind();
+  // cbo_.allocate(colors, 16 * sizeof(GL_FLOAT));  
+  // //ENDTODO
 
   // Bind our vbo inside our vao
   ibo_.bind();
-  ibo_.allocate(idx, 6 * sizeof(GL_FLOAT));  
+  ibo_.allocate(convertIndex, idx.size() * sizeof(GL_FLOAT));  
   // ENDTODO
 
   vao_.bind();
   vbo_.bind();
   shaderProgram_.enableAttributeArray(0);
   shaderProgram_.setAttributeBuffer(0, GL_FLOAT, 0, 3);
-  cbo_.bind();
-  shaderProgram_.enableAttributeArray(1);
-  shaderProgram_.setAttributeBuffer(1, GL_FLOAT, 0, 4);
+  // cbo_.bind();
+  // shaderProgram_.enableAttributeArray(1);
+  // shaderProgram_.setAttributeBuffer(1, GL_FLOAT, 0, 4);
   ibo_.bind();
   // Releae the vao THEN the vbo
   vao_.release();
@@ -259,7 +298,7 @@ ibo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
 ibo_.create();
 // Create a VAO to keep track of things for us.
 vao_.create();
-loadData(verts, colors, idx);
+// loadData(verts, colors, idx);
 #else
   vao_.create();
   vao_.bind();
@@ -296,7 +335,7 @@ void Lab5Widget::paintGL()
   glDisable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
 
-  glClearColor(0.f, 0.f, 0.f, 1.f);
+  glClearColor(1.f, 1.f, 1.f, 1.f);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 #if USE_QT_OPENGL

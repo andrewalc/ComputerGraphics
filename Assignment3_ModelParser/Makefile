@@ -244,6 +244,33 @@ Lab5Widget.cpp.s:
 	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/Lab5Widget.cpp.s
 .PHONY : Lab5Widget.cpp.s
 
+ObjParse.o: ObjParse.cpp.o
+
+.PHONY : ObjParse.o
+
+# target to build an object file
+ObjParse.cpp.o:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/ObjParse.cpp.o
+.PHONY : ObjParse.cpp.o
+
+ObjParse.i: ObjParse.cpp.i
+
+.PHONY : ObjParse.i
+
+# target to preprocess a source file
+ObjParse.cpp.i:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/ObjParse.cpp.i
+.PHONY : ObjParse.cpp.i
+
+ObjParse.s: ObjParse.cpp.s
+
+.PHONY : ObjParse.s
+
+# target to generate assembly for a file
+ObjParse.cpp.s:
+	$(MAKE) -f CMakeFiles/Assignment.dir/build.make CMakeFiles/Assignment.dir/ObjParse.cpp.s
+.PHONY : ObjParse.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -293,6 +320,9 @@ help:
 	@echo "... Lab5Widget.o"
 	@echo "... Lab5Widget.i"
 	@echo "... Lab5Widget.s"
+	@echo "... ObjParse.o"
+	@echo "... ObjParse.i"
+	@echo "... ObjParse.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

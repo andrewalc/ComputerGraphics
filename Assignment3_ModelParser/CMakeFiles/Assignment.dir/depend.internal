@@ -6,6 +6,7 @@ CMakeFiles/Assignment.dir/Application.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Application.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
@@ -18,6 +19,7 @@ CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Assignment_autogen/mocs_compilation.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
@@ -31,9 +33,13 @@ CMakeFiles/Assignment.dir/BasicWidget.cpp.o
 CMakeFiles/Assignment.dir/Lab5Widget.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidgets
+CMakeFiles/Assignment.dir/ObjParse.cpp.o
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
 CMakeFiles/Assignment.dir/main.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Application.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/main.cpp

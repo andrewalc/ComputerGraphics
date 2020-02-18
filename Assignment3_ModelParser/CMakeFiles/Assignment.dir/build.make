@@ -70,9 +70,22 @@ CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Assignment_autogen/mocs_compilation.cpp -o CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.s
 
+CMakeFiles/Assignment.dir/ObjParse.cpp.o: CMakeFiles/Assignment.dir/flags.make
+CMakeFiles/Assignment.dir/ObjParse.cpp.o: ObjParse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment.dir/ObjParse.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment.dir/ObjParse.cpp.o -c /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp
+
+CMakeFiles/Assignment.dir/ObjParse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment.dir/ObjParse.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp > CMakeFiles/Assignment.dir/ObjParse.cpp.i
+
+CMakeFiles/Assignment.dir/ObjParse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment.dir/ObjParse.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.cpp -o CMakeFiles/Assignment.dir/ObjParse.cpp.s
+
 CMakeFiles/Assignment.dir/Lab5Widget.cpp.o: CMakeFiles/Assignment.dir/flags.make
 CMakeFiles/Assignment.dir/Lab5Widget.cpp.o: Lab5Widget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment.dir/Lab5Widget.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment.dir/Lab5Widget.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment.dir/Lab5Widget.cpp.o -c /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Lab5Widget.cpp
 
 CMakeFiles/Assignment.dir/Lab5Widget.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/Assignment.dir/Lab5Widget.cpp.s: cmake_force
 
 CMakeFiles/Assignment.dir/BasicWidget.cpp.o: CMakeFiles/Assignment.dir/flags.make
 CMakeFiles/Assignment.dir/BasicWidget.cpp.o: BasicWidget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment.dir/BasicWidget.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Assignment.dir/BasicWidget.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment.dir/BasicWidget.cpp.o -c /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/BasicWidget.cpp
 
 CMakeFiles/Assignment.dir/BasicWidget.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/Assignment.dir/BasicWidget.cpp.s: cmake_force
 
 CMakeFiles/Assignment.dir/Application.cpp.o: CMakeFiles/Assignment.dir/flags.make
 CMakeFiles/Assignment.dir/Application.cpp.o: Application.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Assignment.dir/Application.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Assignment.dir/Application.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment.dir/Application.cpp.o -c /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/Application.cpp
 
 CMakeFiles/Assignment.dir/Application.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/Assignment.dir/Application.cpp.s: cmake_force
 
 CMakeFiles/Assignment.dir/main.cpp.o: CMakeFiles/Assignment.dir/flags.make
 CMakeFiles/Assignment.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Assignment.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Assignment.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Assignment.dir/main.cpp.o -c /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/main.cpp
 
 CMakeFiles/Assignment.dir/main.cpp.i: cmake_force
@@ -125,6 +138,7 @@ CMakeFiles/Assignment.dir/main.cpp.s: cmake_force
 # Object files for target Assignment
 Assignment_OBJECTS = \
 "CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/Assignment.dir/ObjParse.cpp.o" \
 "CMakeFiles/Assignment.dir/Lab5Widget.cpp.o" \
 "CMakeFiles/Assignment.dir/BasicWidget.cpp.o" \
 "CMakeFiles/Assignment.dir/Application.cpp.o" \
@@ -134,6 +148,7 @@ Assignment_OBJECTS = \
 Assignment_EXTERNAL_OBJECTS =
 
 Assignment: CMakeFiles/Assignment.dir/Assignment_autogen/mocs_compilation.cpp.o
+Assignment: CMakeFiles/Assignment.dir/ObjParse.cpp.o
 Assignment: CMakeFiles/Assignment.dir/Lab5Widget.cpp.o
 Assignment: CMakeFiles/Assignment.dir/BasicWidget.cpp.o
 Assignment: CMakeFiles/Assignment.dir/Application.cpp.o
@@ -145,7 +160,7 @@ Assignment: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidget
 Assignment: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 Assignment: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 Assignment: CMakeFiles/Assignment.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Assignment"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Assignment"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Assignment.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

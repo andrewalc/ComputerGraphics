@@ -17,6 +17,20 @@ QtWidgets
 -
 QtOpenGL
 -
+ObjParse.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment3_ModelParser/ObjParse.h
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 
