@@ -50,7 +50,7 @@ protected:
 public:
  Lab5Widget(QWidget* parent=nullptr);
  //void loadData(std::vector<float> verts, std::vector<float> colors, std::vector<int> idx);
-void loadData(std::vector<float> verts, std::vector<int> idx);
+void loadData(std::vector<float> verts2, std::vector<int> idx2);
 
  void releaseBuffers();
  virtual ~Lab5Widget();

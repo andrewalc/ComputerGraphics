@@ -5,13 +5,16 @@
 
   // TODO:  Add vertex and index data to draw two triangles
   // Define our verts
-  static const GLfloat verts[12] =
-  {
-	-0.8f, -0.8f, 0.0f, // Left vertex position
-	0.8f, -0.8f, 0.0f,  // right vertex position
-	-0.8f,  0.8f, 0.0f,  // Top vertex position
-    0.8f, 0.8f, 0.0f
-  };
+  // static const GLfloat verts[12] =
+  // {
+	// -0.8f, -0.8f, 0.0f, // Left vertex position
+	// 0.8f, -0.8f, 0.0f,  // right vertex position
+	// -0.8f,  0.8f, 0.0f,  // Top vertex position
+  //   0.8f, 0.8f, 0.0f
+  // };
+  // static const std::vector<float> verts {-0.8f, -0.8f, 0.0f, 0.8f, -0.8f, 0.0f, -0.8f, 0.8f, 0.0f, 0.8f, 0.8f, 0.0f };
+  // QVector<float> qVert = QVector<float>::fromStdVector(verts);
+
   // Define our vert colors
   static const GLfloat colors[16] =
   {
@@ -29,10 +32,13 @@
       1.0f, 1.0f, 0.0f, 1.0f  // yellow
   };
   // Define our indices
-  static const GLuint idx[6] =
-  {
-      0, 1, 2, 2, 1, 3
-  };
+  // static const GLuint idx[6] =
+  // {
+  //     0, 1, 2, 2, 1, 3
+  // };
+  // static const std::vector<GLuint> idx {0, 1, 2, 2, 1, 3};
+  // QVector<GLuint> qIdx = QVector<GLuint>::fromStdVector(idx);
+
 bool TRIANGLE = true;
 #if USE_QT_OPENGL
   Lab5Widget::Lab5Widget(QWidget* parent) : QOpenGLWidget(parent), vbo_(QOpenGLBuffer::VertexBuffer), cbo_(QOpenGLBuffer::VertexBuffer), ibo_(QOpenGLBuffer::IndexBuffer)
@@ -47,16 +53,6 @@ bool TRIANGLE = true;
   cubeVerts = cubeParse.verts;
   cubeVertNormals = cubeParse.vertNormals;
   cubeFaces = cubeParse.faces;
-  // for (int i = 0; i < cubeParse.faces.size(); i++){
-  //   if (cubeParse.faces[i].size() > 0) {
-  //     GLfloat face[cubeParse.faces[i].size()];
-  //     for (int j = 0; j < cubeParse.faces[i].size() > 0) {
-  //     }
-  //   }
-  // }
-  // for (int i = 0; i < cubeParse.verts.size(); i++) {
-  //   std::cout << cubeVerts[i] << "\n";
-  // }
 }
 
 void Lab5Widget::releaseBuffers() {
@@ -98,6 +94,32 @@ QString Lab5Widget::vertexShaderString() const
     "}\n";
   return str;
 }
+
+// QString Lab5Widget::vertexShaderString() const
+// {
+//   QString str =
+//     "#version 330\n"
+//     "layout(location = 0) in vec3 position;\n"
+//     "layout(location = 1) in vec4 color;\n"
+
+//     "uniform mat4 modelMatrix;\n"
+//     "uniform mat4 viewMatrix;\n"
+//     "uniform mat4 projectionMatrix;\n"
+    
+//     "out vec4 vertColor;\n"
+
+//     "void main()\n"
+//     "{\n"
+//     // TODO: gl_Position must be updated!
+//     "  mat4 MVPmatrix = projectionMatrix * viewMatrix * modelMatrix;\n"
+
+//     "  gl_Position = vec4(position, 1.0);\n"
+//     "  gl_Position = MVPmatrix * gl_Position;\n"
+//     // END TODO
+//     "  vertColor = color;\n"
+//     "}\n";
+//   return str;
+// }
 
 QString Lab5Widget::fragmentShaderString() const
 {
@@ -198,7 +220,12 @@ void Lab5Widget::keyReleaseEvent(QKeyEvent* keyEvent)
   if (keyEvent->key() == Qt::Key_Left) {
     // TRIANGLE = true;
     releaseBuffers();
-    // loadData(verts, colors, idx);
+    // loadData(verts,idx);
+    std::cout << "=-=--=-==-=-"<< "\n";
+
+    // for (int i = 0; i < verts.size(); i++) {
+    //   std::cout << verts[i] << "\n";
+    // }
     qDebug() << "Left Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else if (keyEvent->key() == Qt::Key_Right) {
@@ -209,13 +236,13 @@ void Lab5Widget::keyReleaseEvent(QKeyEvent* keyEvent)
       if (cubeFaces[i].size() > 0) {
         for (int j = 0; j < cubeFaces[i].size(); j++) {
           if (j % 2 == 0) {
-            std::cout << cubeFaces[i][j] << "\n";
             cubeIndexes.push_back(cubeFaces[i][j]);
           }
         }
       }
     }
     loadData(cubeVerts, cubeIndexes);
+    // loadData(verts, idx);
     qDebug() << "Right Arrow Pressed";
     update();  // We call update after we handle a key press to trigger a redraw when we are ready
   } else {
@@ -226,24 +253,45 @@ void Lab5Widget::keyReleaseEvent(QKeyEvent* keyEvent)
 
 //void Lab5Widget::loadData(std::vector<float> verts, std::vector<float> colors, std::vector<int> idx) {
 void Lab5Widget::loadData(std::vector<float> verts, std::vector<int> idx) {
+  QVector<float> qVert = QVector<float>::fromStdVector(verts);
+  QVector<int> qIdx = QVector<int>::fromStdVector(idx);
+
+  //   static const GLfloat verts2[12] =
+  // {
+	// -0.8f, -0.8f, 0.0f, // Left vertex position
+	// 0.8f, -0.8f, 0.0f,  // right vertex position
+	// -0.8f,  0.8f, 0.0f,  // Top vertex position
+  //   0.8f, 0.8f, 0.0f
+  // };
+  //   static const GLuint idx2[6] =
+  // {
+  //     0, 1, 2, 2, 1, 3
+  // };
+
   releaseBuffers();
   
-  GLfloat convertVerts[verts.size()];
-  std::copy(verts.begin(), verts.end(), convertVerts);
+  // GLfloat convertVerts[verts.size()];
+  // std::copy(verts.begin(), verts.end(), convertVerts);
+
+  // for (int i = 0; i < verts.size(); i++) {
+  //   std::cout << convertVerts[i] << "\n";
+  // }
 
   // normals
   // GLfloat convertVertNormals[vertNormals.size()];
   // std::copy(vertNormals.begin(), vertNormals.end(), convertVertNormals);
 
-  GLfloat convertIndex[idx.size()];
-  std::copy(idx.begin(), idx.end(), convertIndex);
-
+  // GLfloat convertIndex[idx.size()];
+  // std::copy(idx.begin(), idx.end(), convertIndex);
+  // for (int i = 0; i < idx.size(); i++) {
+  //   std::cout << convertIndex[i] << "\n";
+  // }
   // Temporary bind of our shader.
   shaderProgram_.bind();
 
   // Bind our vbo inside our vao
   vbo_.bind();
-  vbo_.allocate(convertVerts, verts.size() * sizeof(GL_FLOAT));
+  vbo_.allocate(qVert.constData(), qVert.size() * sizeof(float));
 
 
   // //Bind our vbo inside our vao
@@ -253,7 +301,7 @@ void Lab5Widget::loadData(std::vector<float> verts, std::vector<int> idx) {
 
   // Bind our vbo inside our vao
   ibo_.bind();
-  ibo_.allocate(convertIndex, idx.size() * sizeof(GL_FLOAT));  
+  ibo_.allocate(qIdx.constData(), qIdx.size() * sizeof(float));  
   // ENDTODO
 
   vao_.bind();

@@ -50,22 +50,21 @@ void ObjParse::parse(std::string fileName) {
                     }
                     i++;
                 }
-                std::cout << "hi " << line << "\n";
                 i = 2;
                 while (i < line.length()) {
                     //std::cout << i << " @:" << line.at(i) << "\n";
                     if (line.at(i) == ' ') {
                         std::string numberStr = line.substr(lastSpace, i-lastSpace);
                         if (numberStr != " ") {
-                            std::cout << i << " push:" << numberStr << "\n";
-                            face.push_back(std::stoi(numberStr));
+                            // std::cout << i << " push:" << numberStr << "\n";
+                            face.push_back(std::stoi(numberStr) - 1);
                         }
                         lastSpace = i;
                     }
                     i++;
                 }
-                std::cout << " push:" << line.substr(lastSpace) << "\n";
-                face.push_back(std::stoi(line.substr(lastSpace)));
+                //std::cout << " push:" << line.substr(lastSpace) << "\n";
+                face.push_back(std::stoi(line.substr(lastSpace)) - 1);
             }
             faces.push_back(face);
         }
