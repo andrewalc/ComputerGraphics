@@ -20,6 +20,10 @@ private:
   QString fragmentShaderString() const;
   void createShader();
   QOpenGLVertexArrayObject vao_;
+  
+  QMatrix4x4 model_;
+  QMatrix4x4 view_;
+  QMatrix4x4 projection_;
 
 protected:
   // Required interaction overrides
@@ -27,6 +31,7 @@ protected:
 
   // Required overrides form QOpenGLWidget
   void initializeGL() override;
+  //void render() override;
   void resizeGL(int w, int h) override;
   void paintGL() override;
 
@@ -57,7 +62,10 @@ void loadData(std::vector<float> verts2, std::vector<int> idx2);
   
   // Make sure we have some size that makes sense.
   QSize sizeHint() const {return QSize(800,600);}
-  std::vector<float> cubeVerts;
-  std::vector<float> cubeVertNormals;
-  std::vector<std::vector<int>> cubeFaces;
+  std::vector<float> bunnyVerts;
+  std::vector<float> bunnyVertNormals;
+  std::vector<std::vector<int>> bunnyFaces;
+  std::vector<float> monkeyVerts;
+  std::vector<float> monkeyVertNormals;
+  std::vector<std::vector<int>> monkeyFaces;
 };
