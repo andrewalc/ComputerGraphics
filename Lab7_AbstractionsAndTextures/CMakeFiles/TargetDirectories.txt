@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/CMakeFiles/App.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/CMakeFiles/App_autogen.dir
