@@ -6,46 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App.cpp
-App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App.h
-BasicWidget.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/BasicWidget.h
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App.h
-QtGui
--
-QtCore
--
-QtWidgets
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App_autogen/EWIEGA46WW/moc_App.cpp
-memory
--
-../../App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
-memory
--
-../../BasicWidget.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/BasicWidget.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App_autogen/mocs_compilation.cpp
-EWIEGA46WW/moc_App.cpp
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App_autogen/EWIEGA46WW/moc_App.cpp
-EWIEGA46WW/moc_BasicWidget.cpp
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
-
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/BasicWidget.cpp
 BasicWidget.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/BasicWidget.h
@@ -60,14 +20,6 @@ QtOpenGL
 Renderable.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/Renderable.h
 
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/Renderable.cpp
-Renderable.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/Renderable.h
-QtGui
--
-QtOpenGL
--
-
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/Renderable.h
 QtCore
 -
@@ -75,16 +27,6 @@ QtGui
 -
 QtOpenGL
 -
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/main.cpp
-QtCore
--
-QtGui
--
-QtOpenGL
--
-App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab7_AbstractionsAndTextures/App.h
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 
