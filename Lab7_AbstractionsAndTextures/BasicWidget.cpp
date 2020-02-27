@@ -38,15 +38,28 @@ void BasicWidget::initializeGL()
   initializeOpenGLFunctions();
 
   qDebug() << QDir::currentPath();
+  Renderable * cat1 = makeCat(QVector3D(0, 0, 0));
+  Renderable * cat2 = makeCat(QVector3D(0, 0, 0));
+  QMatrix4x4 transform;
+  transform.setToIdentity();
+  transform.translate(1,0,0);
+  cat1->setModelMatrix(transform);
+  cat1->setRotationAxis(QVector3D(0,1,0));
+  cat1->setRotationSpeed(7.0f);
+  glViewport(0, 0, width(), height());
+  frameTimer_.start();
+}
+
+Renderable* BasicWidget::makeCat(QVector3D offset) {
   QString texFile = "./cat3.ppm";
   QVector<QVector3D> pos;
   QVector<QVector3D> norm;
   QVector<QVector2D> texCoord;
   QVector<unsigned int> idx;
-  pos << QVector3D(-0.8, -0.8, 0.0);
-  pos << QVector3D(0.8, -0.8, 0.0);
-  pos << QVector3D(-0.8, 0.8, 0.0);
-  pos << QVector3D(0.8, 0.8, 0.0);
+  pos << QVector3D(-0.8 + offset.x(), -0.8 + offset.y(), 0.0 + offset.z());
+  pos << QVector3D(0.8 + offset.x(), -0.8 + offset.y(), 0.0 + offset.z());
+  pos << QVector3D(-0.8 + offset.x(), 0.8 + offset.y(), 0.0 + offset.z());
+  pos << QVector3D(0.8 + offset.x(), 0.8 + offset.y(), 0.0 + offset.z());
   // We don't actually use the normals right now, but this will be useful later!
   norm << QVector3D(0.0, 0.0, 1.0);
   norm << QVector3D(0.0, 0.0, 1.0);
@@ -54,15 +67,14 @@ void BasicWidget::initializeGL()
   norm << QVector3D(0.0, 0.0, 1.0);
   // TODO:  Make sure to add texture coordinates to pass into the initialization of our renderable
   idx << 0 << 1 << 2 << 2 << 1 << 3;
-  texCoord << QVector2D(0, 0);
+  texCoord << QVector2D(1, 1);
   texCoord << QVector2D(0, 1);
   texCoord << QVector2D(1, 0);
-  texCoord << QVector2D(1, 1);
+  texCoord << QVector2D(0, 0);
   Renderable* ren = new Renderable();
   ren->init(pos, norm, texCoord, idx, texFile);
   renderables_.push_back(ren);
-  glViewport(0, 0, width(), height());
-  frameTimer_.start();
+  return ren;
 }
 
 void BasicWidget::resizeGL(int w, int h)
