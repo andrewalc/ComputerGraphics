@@ -44,7 +44,7 @@ QString BasicWidget::vertexShaderString() const
     "  gl_Position = vec4(position, 1.0);\n"
     "  gl_Position = MVPmatrix * gl_Position;\n"
     // END TODO
-    "  vertColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
+    "  vertColor = color;\n"
     "}\n";
   return str;
 }
@@ -57,7 +57,7 @@ QString BasicWidget::fragmentShaderString() const
 	"out vec4 color;\n"
 	"void main()\n"
 	"{\n"
-	"  color = vec4(1.0f, 0.0f, 0.0f, 1.0f);\n"
+	"  color = vertColor;\n"
 	"}\n";
   return str;
 }
