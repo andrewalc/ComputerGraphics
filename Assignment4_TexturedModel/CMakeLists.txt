@@ -17,7 +17,12 @@ include_directories(
 )
 
 set(srcs
+  App.cpp
+  BasicWidget.cpp
   main.cpp
+  ObjParse.cpp
+  ppm.cpp
+  Renderable.cpp
 )
 
 add_executable(App

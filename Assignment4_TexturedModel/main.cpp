@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
 
     // TODO:  Replace the following 3 lines with whatever you need to create,
     // show, and execute your application
-    Application app;
+    App app;
     app.show();
     return QApplication::exec();
 }

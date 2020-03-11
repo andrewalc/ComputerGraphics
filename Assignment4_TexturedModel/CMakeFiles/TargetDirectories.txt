@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/CMakeFiles/App.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/CMakeFiles/App_autogen.dir
