@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab8_CameraAndIllumination/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab8_CameraAndIllumination/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab8_CameraAndIllumination/CMakeFiles/App.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab8_CameraAndIllumination/CMakeFiles/App_autogen.dir

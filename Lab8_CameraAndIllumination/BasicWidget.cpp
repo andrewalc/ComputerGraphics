@@ -80,8 +80,8 @@ void BasicWidget::initializeGL()
 
   qDebug() << QDir::currentPath();
   // TODO:  You may have to change these paths.
-  QString brickTex = "../../brick.ppm";
-  QString grassTex = "../../grass.ppm";
+  QString brickTex = "./brick.ppm";
+  QString grassTex = "./grass.ppm";
 
   UnitQuad* backWall = new UnitQuad();
   backWall->init(brickTex);
