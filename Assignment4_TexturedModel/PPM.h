@@ -9,6 +9,9 @@
 #ifndef PPM_H
 #define PPM_H
 
+#include <QtCore>
+#include <QtGui>
+#include <QtOpenGL>
 #include <fstream>
 #include <iostream>
 #include <sstream>  // std::istringstream
@@ -33,6 +36,8 @@ class PPM {
     // Returns the raw pixel data in an array.
     // You may research what 'inline' does.
     inline unsigned int* pixelData() { return m_PixelData; }
+
+    QVector<QVector2D> getPixelData2D();
     // Returns image width
     inline int getWidth() { return m_width; }
     // Returns image height

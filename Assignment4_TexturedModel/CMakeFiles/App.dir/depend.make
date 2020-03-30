@@ -4,6 +4,8 @@
 CMakeFiles/App.dir/App.cpp.o: App.cpp
 CMakeFiles/App.dir/App.cpp.o: App.h
 CMakeFiles/App.dir/App.cpp.o: BasicWidget.h
+CMakeFiles/App.dir/App.cpp.o: ObjParse.h
+CMakeFiles/App.dir/App.cpp.o: PPM.h
 CMakeFiles/App.dir/App.cpp.o: Renderable.h
 CMakeFiles/App.dir/App.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/App.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -15,6 +17,8 @@ CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: App_autogen/EWIEGA46WW/mo
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: App_autogen/mocs_compilation.cpp
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: BasicWidget.h
+CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: ObjParse.h
+CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: PPM.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: Renderable.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -23,6 +27,8 @@ CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.
 
 CMakeFiles/App.dir/BasicWidget.cpp.o: BasicWidget.cpp
 CMakeFiles/App.dir/BasicWidget.cpp.o: BasicWidget.h
+CMakeFiles/App.dir/BasicWidget.cpp.o: ObjParse.h
+CMakeFiles/App.dir/BasicWidget.cpp.o: PPM.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: Renderable.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -31,6 +37,9 @@ CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/Qt
 
 CMakeFiles/App.dir/ObjParse.cpp.o: ObjParse.cpp
 CMakeFiles/App.dir/ObjParse.cpp.o: ObjParse.h
+CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
+CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
+CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidgets
 
 CMakeFiles/App.dir/Renderable.cpp.o: Renderable.cpp
 CMakeFiles/App.dir/Renderable.cpp.o: Renderable.h
@@ -47,4 +56,7 @@ CMakeFiles/App.dir/main.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets
 
 CMakeFiles/App.dir/ppm.cpp.o: PPM.h
 CMakeFiles/App.dir/ppm.cpp.o: ppm.cpp
+CMakeFiles/App.dir/ppm.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
+CMakeFiles/App.dir/ppm.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
+CMakeFiles/App.dir/ppm.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
 

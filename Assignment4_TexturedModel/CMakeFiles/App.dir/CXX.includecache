@@ -6,46 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.cpp
-App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.h
-BasicWidget.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.h
-QtGui
--
-QtCore
--
-QtWidgets
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/EWIEGA46WW/moc_App.cpp
-memory
--
-../../App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
-memory
--
-../../BasicWidget.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/mocs_compilation.cpp
-EWIEGA46WW/moc_App.cpp
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/EWIEGA46WW/moc_App.cpp
-EWIEGA46WW/moc_BasicWidget.cpp
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
-
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.cpp
 BasicWidget.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
@@ -59,12 +19,22 @@ QtOpenGL
 -
 Renderable.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
+ObjParse.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+PPM.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
 
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.cpp
 ObjParse.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
 
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+QtGui
+-
+QtOpenGL
+-
+QtWidgets
+-
 fstream
 -
 iostream
@@ -77,6 +47,12 @@ vector
 -
 
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
+QtCore
+-
+QtGui
+-
+QtOpenGL
+-
 fstream
 -
 iostream
@@ -103,20 +79,8 @@ QtGui
 -
 QtOpenGL
 -
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/main.cpp
-QtCore
+iostream
 -
-QtGui
--
-QtOpenGL
--
-App.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.h
-
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ppm.cpp
-PPM.h
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 

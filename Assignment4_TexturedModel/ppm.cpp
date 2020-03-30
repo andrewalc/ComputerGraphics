@@ -97,3 +97,18 @@ void PPM::setPixel(int x, int y, int R, int G, int B) {
     *(m_PixelData + i + 1) = G;
     *(m_PixelData + i + 2) = B;
 }
+
+QVector<QVector2D> PPM::getPixelData2D(){
+    QVector<QVector2D> pixelData;
+    QVector2D vector;
+    for (int i = 0; i < pixelDataSize; i++) {
+        int value = *(m_PixelData + i);
+        if (i % 2 == 0) {
+            vector.setX(value);
+        } else if (i % 2 == 1) {
+            vector.setY(value);
+            pixelData.push_back(vector);
+        }
+    }
+    return pixelData;
+}

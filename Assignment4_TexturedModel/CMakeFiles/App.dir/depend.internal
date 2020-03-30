@@ -5,6 +5,8 @@ CMakeFiles/App.dir/App.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -16,6 +18,8 @@ CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/EWIEGA46WW/moc_BasicWidget.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/App_autogen/mocs_compilation.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -24,6 +28,8 @@ CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o
 CMakeFiles/App.dir/BasicWidget.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+ /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
  /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
@@ -32,6 +38,9 @@ CMakeFiles/App.dir/BasicWidget.cpp.o
 CMakeFiles/App.dir/ObjParse.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidgets
 CMakeFiles/App.dir/Renderable.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.cpp
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
@@ -48,3 +57,6 @@ CMakeFiles/App.dir/main.cpp.o
 CMakeFiles/App.dir/ppm.cpp.o
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
  /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ppm.cpp
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
+ /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL

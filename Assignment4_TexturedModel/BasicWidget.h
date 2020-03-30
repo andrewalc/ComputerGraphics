@@ -5,6 +5,8 @@
 #include <QtOpenGL>
 
 #include "Renderable.h"
+#include "ObjParse.h"
+#include "PPM.h"
 
 /**
  * This is just a basic OpenGL widget that will allow a change of background color.
@@ -32,7 +34,7 @@ protected:
   void initializeGL() override;
   void resizeGL(int w, int h) override;
   void paintGL() override;
-  Renderable* makeCat(QVector3D offset);
+  Renderable* makeHouse(QVector3D offset);
   
 public:
   BasicWidget(QWidget* parent=nullptr);

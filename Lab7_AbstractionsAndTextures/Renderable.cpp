@@ -129,7 +129,6 @@ void Renderable::draw(const QMatrix4x4& view, const QMatrix4x4& projection)
 	QMatrix4x4 rotMatrix;
 	rotMatrix.setToIdentity();
 	rotMatrix.rotate(rotationAngle_, rotationAxis_);
-
 	QMatrix4x4 modelMat = modelMatrix_ * rotMatrix;
 	// Make sure our state is what we want
 	shader_.bind();
