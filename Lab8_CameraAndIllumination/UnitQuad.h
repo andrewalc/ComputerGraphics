@@ -1,5 +1,7 @@
 #pragma once
 
+#include <math.h>
+#include <iostream>
 #include "Renderable.h"
 
 class UnitQuad : public Renderable
