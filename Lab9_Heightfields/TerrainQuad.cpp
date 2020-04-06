@@ -25,7 +25,7 @@ void TerrainQuad::init(const QString& textureFile)
     QVector3D normal(0.0, 1.0, 0.0);
 
     // TODO:  You may need to change the path here.
-    QImage heightImage("../../terrain2.ppm");
+    QImage heightImage("./terrain2.ppm");
 
     unsigned int curIdx = 0;
     // Populate our grid
