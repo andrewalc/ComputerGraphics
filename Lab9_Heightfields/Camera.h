@@ -34,6 +34,8 @@ public:
 	// Get our camera matrix
 	QMatrix4x4 getViewMatrix() const;
 	QMatrix4x4 getProjectionMatrix() const;
+	float ROTATION_SPEED = .02;
+	float ZOOM_SPEED = .03;
 
 private:
 
