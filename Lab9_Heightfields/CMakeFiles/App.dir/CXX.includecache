@@ -19,6 +19,8 @@ TerrainQuad.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab9_Heightfields/TerrainQuad.h
 QOpenGLFunctions_3_3_core
 -
+iostream
+-
 
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Lab9_Heightfields/TerrainQuad.h
 Renderable.h

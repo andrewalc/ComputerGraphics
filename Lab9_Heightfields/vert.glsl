@@ -10,7 +10,7 @@ uniform mat4 projectionMatrix;
 
 // We add our sampler here to extract height information
 uniform sampler2D tex;
-
+vec3 offset = texture(tex, textureCoords).xyz;
 // We define a new output vec2 for our texture coorinates.
 out vec2 texCoords;
 out vec3 norm;

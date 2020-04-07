@@ -2,7 +2,9 @@
 
 #include <QOpenGLFunctions_3_3_core>
 
-TerrainQuad::TerrainQuad() : lightPos_(0.5f, 0.5f, -2.0f), sign_(1.0f), numIdxPerStrip_(0), numStrips_(0), heightTexture_(QOpenGLTexture::Target2D)
+#include <iostream>
+
+TerrainQuad::TerrainQuad() : lightPos_(0.5f, 0.5f, -2.0f), sign_(2000.0f), numIdxPerStrip_(0), numStrips_(0), heightTexture_(QOpenGLTexture::Target2D)
 {}
 
 TerrainQuad::~TerrainQuad()
@@ -10,6 +12,7 @@ TerrainQuad::~TerrainQuad()
 
 void TerrainQuad::init(const QString& textureFile)
 {
+    
     // The unit quad goes from 0.0 to 1.0 in each dimension.
     QVector<QVector3D> pos;
     QVector<QVector3D> norm;
@@ -36,7 +39,8 @@ void TerrainQuad::init(const QString& textureFile)
             float x = c * colStep;
             // TODO - Before changing anything in the shaders, we can get heightmapping
             // to work by changing this y coordinate.  Implement this now to create a heightmap!
-            float y = (float) heightImage.pixel(z, x) / sign_;
+            float y = (float) heightImage.pixelColor(z * (heightImage.width() - 1), x * (heightImage.height() - 1)).red() / sign_;
+            //std::cout << z * heightImage.width() << x * heightImage.height() << std::endl;
             // Be explicit about our texture coords
             float u = z;
             float v = x;
@@ -105,25 +109,26 @@ void TerrainQuad::draw(const QMatrix4x4& world, const QMatrix4x4& view, const QM
     // TODO - After seeing the initial heightmap by querying in C++ the height image
     // uncommment these lines to change implementations to use the vertex shader!
     // We bind our height texture at Texture Unit 0
-    f.glActiveTexture(GL_TEXTURE0);
-    heightTexture_.bind();
+//    f.glActiveTexture(GL_TEXTURE0);
+//    heightTexture_.bind();
 
     // And our color texture at Texture Unit 1.
-    f.glActiveTexture(GL_TEXTURE1);
+//    f.glActiveTexture(GL_TEXTURE1);
     texture_.bind();
 
     // Setup our shader uniforms for multiple textures.  Make sure we use the correct
     // texture units as defined above!
     // TODO - Uncomment these lines when youa re ready to move from C++ implementation to
     // the GPU shader implementation.
-    shader_.setUniformValue("tex", GL_TEXTURE0);
-    shader_.setUniformValue("colorTex", GL_TEXTURE1 - GL_TEXTURE0);
-    for (int s = 0; s < numStrips_; ++s) {
+//    shader_.setUniformValue("tex", GL_TEXTURE0);
+//    shader_.setUniformValue("colorTex", GL_TEXTURE1 - GL_TEXTURE0);
+    // for (int s = 0; s < numStrips_; ++s) {
         // TODO:  Draw the correct number of triangle strips using glDrawElements
-    }
-    heightTexture_.release();
+        glDrawElements(GL_TRIANGLE_STRIP, numStrips_ * numIdxPerStrip_, GL_UNSIGNED_INT, 0);
+    // }
+//    heightTexture_.release();
     texture_.release();
-    f.glActiveTexture(GL_TEXTURE0);
+//    f.glActiveTexture(GL_TEXTURE0);
     vao_.release();
     shader_.release();
 }
