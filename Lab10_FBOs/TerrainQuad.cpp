@@ -24,7 +24,7 @@ void TerrainQuad::init(const QString& textureFile)
 
     QVector<unsigned int> stripIdx;
     QVector3D normal(0.0, 1.0, 0.0);
-    QImage heightImage("../../terrain2.ppm");
+    QImage heightImage("./terrain2.ppm");
     unsigned int curIdx = 0;
     // Populate our grid
     for (unsigned int r = 0; r < numRows; ++r) {

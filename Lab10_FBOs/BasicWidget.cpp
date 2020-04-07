@@ -67,9 +67,16 @@ void BasicWidget::mouseMoveEvent(QMouseEvent* mouseEvent)
   lastMouseLoc_ = mouseEvent->pos();
   if (mouseAction_ == Rotate) {
     // TODO:  Implement rotating the camera
+    // QVector3D gaze = camera_.gazeVector();
+    // camera_.translateCamera(gaze + QVector(gaze.x() + 1 , gaze.y() + 1, gaze.z()) * camera_.ROTATION_SPEED);
+    // camera_.translateLookAt(camera_.upVector() * camera_.ROTATION_SPEED
+    //  * (delta.y() > 0 ? -1 : 1));
+    camera_.translateLookAt(QVector3D(0,0,0).crossProduct(camera_.lookAt() - camera_.position(), camera_.upVector()) * camera_.ROTATION_SPEED
+    * delta.x());
   } else if (mouseAction_ == Zoom) {
     // TODO:  Implement zoom by moving the camera
     // Zooming is moving along the gaze direction by some amount.
+      camera_.translateCamera(camera_.gazeVector() * camera_.ZOOM_SPEED * -delta.y());
   } 
   update();
 }
@@ -133,12 +140,12 @@ void BasicWidget::setupViewQuad()
 void BasicWidget::setupShaders()
 {
     // TODO:  You may need to change these paths based on how/where you choose to build
-    QString vertexFilename = "../../FBOVert.glsl";
+    QString vertexFilename = "./FBOVert.glsl";
     bool ok = shader_.addShaderFromSourceFile(QOpenGLShader::Vertex, vertexFilename);
     if (!ok) {
         qDebug() << shader_.log();
     }
-    QString fragmentFilename = "../../FBOFrag.glsl";
+    QString fragmentFilename = "./FBOFrag.glsl";
     ok = shader_.addShaderFromSourceFile(QOpenGLShader::Fragment, fragmentFilename);
     if (!ok) {
         qDebug() << shader_.log();
@@ -180,7 +187,7 @@ void BasicWidget::initializeGL()
 
   qDebug() << QDir::currentPath();
   // TODO:  You may have to change these paths.
-  QString terrainTex = "../../colormap.ppm";
+  QString terrainTex = "./colormap.ppm";
 
   TerrainQuad* terrain = new TerrainQuad();
   terrain->init(terrainTex);
