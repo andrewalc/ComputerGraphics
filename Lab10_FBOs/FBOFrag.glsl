@@ -15,5 +15,7 @@ void main() {
   vec3 color = texture(FBOTex, texCoords).rgb;
   // We can now modify things a bit to provide some nice post-processing effects.
   // TODO - Implement some type of post-processing effect here.
-  fragColor = vec4(color, 1.0);
+  float average = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
+  fragColor = vec4(average, average, average, 1.0);
+
 }
