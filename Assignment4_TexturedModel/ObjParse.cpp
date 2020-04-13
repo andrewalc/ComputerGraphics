@@ -105,12 +105,12 @@ QVector<QVector3D> ObjParse::getVerts3D() {
     for (int i = 0; i < verts.size(); i++) {
         if (i % 3 == 0) {
             vector.setX(verts[i]);
-            std::cout << "VEC X : " << verts[i] << "\n";
+            // std::cout << "VEC X : " << verts[i] << "\n";
         } else if (i % 3 == 1) {
-            std::cout << "VEC Y : " << verts[i] << "\n";
+            // std::cout << "VEC Y : " << verts[i] << "\n";
             vector.setY(verts[i]);
         } else if (i % 3 == 2) {
-            std::cout << "VEC Z : " << verts[i] << "\n";
+            // std::cout << "VEC Z : " << verts[i] << "\n";
             vector.setZ(verts[i]);
             vertsVector.push_back(vector);
         }

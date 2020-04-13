@@ -65,15 +65,18 @@ void Renderable::init(const QVector<QVector3D>& positions,
     // Set our model matrix to identity
     modelMatrix_.setToIdentity();
     // Load our texture.
-    texture_.setData(QImage(textureFile));
+    // texture_.setData(QImage(textureFile));
 
     // set our number of trianges.
     numTris_ = indexes.size() / 3;
 
     // num verts (used to size our vbo)
     int numVerts = positions.size();
-    vertexSize_ = 3 + 2;  // Position + texCoord
+    vertexSize_ = 3;  // * 2;  // Position + texCoord
     int numVBOEntries = numVerts * vertexSize_;
+    std::cout << "\n"
+              << "Renderable 11111111"
+              << "";
 
     // Setup our shader.
     createShaders();
@@ -85,17 +88,25 @@ void Renderable::init(const QVector<QVector3D>& positions,
     vbo_.create();
     vbo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
     vbo_.bind();
+    std::cout << "\n"
+              << "Renderable 22222222"
+              << "";
+
     // Create a temporary data array
     float* data = new float[numVBOEntries];
     for (int i = 0; i < numVerts; ++i) {
         data[i * vertexSize_ + 0] = positions.at(i).x();
         data[i * vertexSize_ + 1] = positions.at(i).y();
         data[i * vertexSize_ + 2] = positions.at(i).z();
-        data[i * vertexSize_ + 3] = texCoords.at(i).x();
-        data[i * vertexSize_ + 4] = texCoords.at(i).y();
+        // data[i * vertexSize_ + 3] = texCoords.at(i).x();
+        // data[i * vertexSize_ + 4] = texCoords.at(i).y();
+        std::cout << data[i * vertexSize_ + 0] << '\n';
     }
     vbo_.allocate(data, numVBOEntries * sizeof(float));
     delete[] data;
+    std::cout << "\n"
+              << "Renderable 333333333"
+              << "";
 
     // Create our index buffer
     ibo_.create();
@@ -103,11 +114,27 @@ void Renderable::init(const QVector<QVector3D>& positions,
     ibo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
     // create a temporary array for our indexes
     unsigned int* idxAr = new unsigned int[indexes.size()];
+    std::cout << "\n"
+              << "ayyyyyyyyyyyyyy"
+              << "";
+
     for (int i = 0; i < indexes.size(); ++i) {
         idxAr[i] = indexes.at(i);
     }
-    ibo_.allocate(idxAr, indexes.size() * sizeof(unsigned int));
-    delete[] idxAr;
+    std::cout << "\n"
+              << "ohhhhhhhhhhh"
+              << "";
+
+    // ibo_.allocate(idxAr, indexes.size() * sizeof(unsigned int));
+    std::cout << "\n"
+              << "???????????1"
+              << "\n";
+    // std::cout << *idxAr << "";
+
+    // delete[] idxAr;
+    std::cout << "\n"
+              << "Renderable 4444444444"
+              << "";
 
     // Make sure we setup our shader inputs properly
     shader_.enableAttributeArray(0);
@@ -153,7 +180,7 @@ void Renderable::draw(const QMatrix4x4& view, const QMatrix4x4& projection) {
 
     vao_.bind();
     texture_.bind();
-    glDrawElements(GL_TRIANGLES, 300, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 30000, GL_UNSIGNED_INT, 0);
     texture_.release();
     vao_.release();
     shader_.release();

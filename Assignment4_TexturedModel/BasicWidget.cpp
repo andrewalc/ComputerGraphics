@@ -38,25 +38,32 @@ void BasicWidget::initializeGL() {
     initializeOpenGLFunctions();
 
     qDebug() << QDir::currentPath();
+    std::cout << "111111111111 Make it??????"
+              << "";
 
     Renderable* house = makeHouse(QVector3D(0, 0, 0));
+
+    std::cout << "22222222222222222 Make it??????"
+              << "";
+
     // QMatrix4x4 transform;
     // transform.setToIdentity();
     // transform.translate(1,0,0);
     // house->setModelMatrix(transform);
     // house->setRotationAxis(QVector3D(0,1,0));
     // house->setRotationSpeed(7.0f);
-
     glViewport(0, 0, width(), height());
     frameTimer_.start();
 }
 
 Renderable* BasicWidget::makeHouse(QVector3D offset) {
-
-    QString texFile = "./cat3.ppm";
+    QString texFile = "objects/house/house_diffuse.ppm";
     ObjParse parser = ObjParse();
-    parser.parse("objects/house/house_obj.obj");
-    PPM texturePPM = PPM("cat3.ppm");
+    parser.parse("objects/monkey_centered.obj");
+    std::cout << "333333333333 Make it??????"
+              << "";
+
+    // PPM texturePPM = PPM("cat3.ppm");
     QVector<QVector3D> pos = parser.getVerts3D();
     QVector<QVector3D> norm;
     QVector<QVector2D> texCoord = parser.getVTData2D();
@@ -80,11 +87,20 @@ Renderable* BasicWidget::makeHouse(QVector3D offset) {
     // texCoord << QVector2D(0, 1);
     // texCoord << QVector2D(1, 0);
     // texCoord << QVector2D(0, 0);
+    std::cout << "444444444 Make it??????"
+              << "";
 
     Renderable* ren = new Renderable();
+    std::cout << "555555 Make it??????"
+              << "";
 
     ren->init(pos, norm, texCoord, idx, texFile);
+    std::cout << "66666666 Make it??????"
+              << "";
+
     renderables_.push_back(ren);
+    std::cout << "77777777Make it??????"
+              << "";
     return ren;
 }
 
@@ -101,6 +117,8 @@ void BasicWidget::resizeGL(int w, int h) {
         });
         logger_.startLogging();
     }
+    std::cout << "Make it??????"
+              << "";
     glViewport(0, 0, w, h);
     view_.setToIdentity();
     view_.lookAt(QVector3D(0.0f, 0.0f, 2.0f), QVector3D(0.0f, 0.0f, 0.0f),
