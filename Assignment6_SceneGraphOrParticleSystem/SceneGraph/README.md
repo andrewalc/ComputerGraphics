@@ -102,7 +102,7 @@ the final position of an object in world space? Note: There is a handy
 [tutorial](./media/SceneGraphs.pdf) in the repository including more
 information on scenegraphs which may help you answer.
   
-**Answer here**: *Your answer here*
+**Answer here**: Its better to store the local and world transforms because if we didn't we'd have to traverse the tree whenever we wanted the world transform of a node. If we wanted world transform of a node in the tree, we'd have to do multiple multiplications on the way down the tree, and that can get messy in bigger trees. It's easier to just do one multiplcaiton.
   
 ## How to run your program
 
