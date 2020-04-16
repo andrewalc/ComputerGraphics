@@ -1,0 +1,4 @@
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment5_NormalMappedModel/CMakeFiles/rebuild_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment5_NormalMappedModel/CMakeFiles/edit_cache.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment5_NormalMappedModel/CMakeFiles/App.dir
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment5_NormalMappedModel/CMakeFiles/App_autogen.dir
