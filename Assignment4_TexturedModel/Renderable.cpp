@@ -47,7 +47,84 @@ void Renderable::createShaders() {
         qDebug() << shader_.log();
     }
 }
+void Renderable::init(const QVector<Vertexture>& vts, const QVector<unsigned int>& indexes, const QString& textureFile) {
+        // NOTE:  We do not currently do anything with normals -- we just
+    // have it here for a later implementation!
+    // We need to make sure our sizes all work out ok.
+    if (vts.size() != indexes.size()) {
+        std::cout << "vts length " << vts.size() << "\n";
+        std::cout << "indexes length " << indexes.size() << "\n";
 
+        qDebug() << "[Renderable]::init() -- positions size mismatch with "
+                    "normals/texture coordinates";
+        // return;
+    }
+
+    // Set our model matrix to identity
+    modelMatrix_.setToIdentity();
+    // Load our texture.
+    texture_.setData(QImage(textureFile));
+
+    // set our number of trianges.
+    numTris_ = indexes.size() / 3;
+
+    // num verts (used to size our vbo)
+    int numVerts = vts.size();
+    vertexSize_ = 3 + 2;  // Position + texCoord
+    int numVBOEntries = numVerts * vertexSize_;
+
+    // Setup our shader.
+    createShaders();
+
+    // Now we can set up our buffers.
+    // The VBO is created -- now we must create our VAO
+    vao_.create();
+    vao_.bind();
+    vbo_.create();
+    vbo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
+    vbo_.bind();
+
+    // Create a temporary data array
+    float* data = new float[numVBOEntries];
+    for (int i = 0; i < numVerts; ++i) {
+        data[i * vertexSize_ + 0] = vts.at(i).x;
+        data[i * vertexSize_ + 1] = vts.at(i).y;
+        data[i * vertexSize_ + 2] = vts.at(i).z;
+        data[i * vertexSize_ + 3] = vts.at(i).a;
+        data[i * vertexSize_ + 4] = vts.at(i).b;
+        //std::cout << data[i * vertexSize_ + 0] << '\n';
+    }
+    vbo_.allocate(data, numVBOEntries * sizeof(float));
+    delete[] data;
+
+    // Create our index buffer
+    ibo_.create();
+    ibo_.bind();
+    ibo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
+    // create a temporary array for our indexes
+    unsigned int* idxAr = new unsigned int[indexes.size()];
+
+    for (int i = 0; i < indexes.size(); ++i) {
+        idxAr[i] = indexes.at(i);
+    }
+    ibo_.allocate(idxAr, indexes.size() * sizeof(unsigned int));
+    // std::cout << *idxAr << "";
+
+    delete[] idxAr;
+
+    // Make sure we setup our shader inputs properly
+    shader_.enableAttributeArray(0);
+    shader_.setAttributeBuffer(0, GL_FLOAT, 0, 3, vertexSize_ * sizeof(float));
+    shader_.enableAttributeArray(1);
+    shader_.setAttributeBuffer(1, GL_FLOAT, 3 * sizeof(float), 2,
+                               vertexSize_ * sizeof(float));
+
+    // Release our vao and THEN release our buffers.
+    vao_.release();
+    vbo_.release();
+    ibo_.release();
+
+}
 void Renderable::init(const QVector<QVector3D>& positions,
                       const QVector<QVector3D>& normals,
                       const QVector<QVector2D>& texCoords,
@@ -65,18 +142,15 @@ void Renderable::init(const QVector<QVector3D>& positions,
     // Set our model matrix to identity
     modelMatrix_.setToIdentity();
     // Load our texture.
-    // texture_.setData(QImage(textureFile));
+    texture_.setData(QImage(textureFile));
 
     // set our number of trianges.
     numTris_ = indexes.size() / 3;
 
     // num verts (used to size our vbo)
     int numVerts = positions.size();
-    vertexSize_ = 3;  // * 2;  // Position + texCoord
+    vertexSize_ = 3 + 2;  // Position + texCoord
     int numVBOEntries = numVerts * vertexSize_;
-    std::cout << "\n"
-              << "Renderable 11111111"
-              << "";
 
     // Setup our shader.
     createShaders();
@@ -88,9 +162,6 @@ void Renderable::init(const QVector<QVector3D>& positions,
     vbo_.create();
     vbo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
     vbo_.bind();
-    std::cout << "\n"
-              << "Renderable 22222222"
-              << "";
 
     // Create a temporary data array
     float* data = new float[numVBOEntries];
@@ -98,15 +169,12 @@ void Renderable::init(const QVector<QVector3D>& positions,
         data[i * vertexSize_ + 0] = positions.at(i).x();
         data[i * vertexSize_ + 1] = positions.at(i).y();
         data[i * vertexSize_ + 2] = positions.at(i).z();
-        // data[i * vertexSize_ + 3] = texCoords.at(i).x();
-        // data[i * vertexSize_ + 4] = texCoords.at(i).y();
-        std::cout << data[i * vertexSize_ + 0] << '\n';
+        data[i * vertexSize_ + 3] = texCoords.at(i).x();
+        data[i * vertexSize_ + 4] = texCoords.at(i).y();
+        //std::cout << data[i * vertexSize_ + 0] << '\n';
     }
     vbo_.allocate(data, numVBOEntries * sizeof(float));
     delete[] data;
-    std::cout << "\n"
-              << "Renderable 333333333"
-              << "";
 
     // Create our index buffer
     ibo_.create();
@@ -114,27 +182,14 @@ void Renderable::init(const QVector<QVector3D>& positions,
     ibo_.setUsagePattern(QOpenGLBuffer::StaticDraw);
     // create a temporary array for our indexes
     unsigned int* idxAr = new unsigned int[indexes.size()];
-    std::cout << "\n"
-              << "ayyyyyyyyyyyyyy"
-              << "";
 
     for (int i = 0; i < indexes.size(); ++i) {
         idxAr[i] = indexes.at(i);
     }
-    std::cout << "\n"
-              << "ohhhhhhhhhhh"
-              << "";
-
-    // ibo_.allocate(idxAr, indexes.size() * sizeof(unsigned int));
-    std::cout << "\n"
-              << "???????????1"
-              << "\n";
+    ibo_.allocate(idxAr, indexes.size() * sizeof(unsigned int));
     // std::cout << *idxAr << "";
 
-    // delete[] idxAr;
-    std::cout << "\n"
-              << "Renderable 4444444444"
-              << "";
+    delete[] idxAr;
 
     // Make sure we setup our shader inputs properly
     shader_.enableAttributeArray(0);
@@ -180,7 +235,7 @@ void Renderable::draw(const QMatrix4x4& view, const QMatrix4x4& projection) {
 
     vao_.bind();
     texture_.bind();
-    glDrawElements(GL_TRIANGLES, 30000, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 10000, GL_UNSIGNED_INT, 0);
     texture_.release();
     vao_.release();
     shader_.release();

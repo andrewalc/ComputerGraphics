@@ -14,7 +14,6 @@ include_directories(
   ${QtCore_INCLUDES}
   ${QtGui_INCLUDES}
   ${QtOpenGL_INCLUDES}
-  Sphere.h
 )
 
 set(srcs

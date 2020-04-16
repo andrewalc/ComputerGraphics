@@ -1,4 +1,5 @@
 #include "BasicWidget.h"
+bool WIREFRAME = false;
 
 //////////////////////////////////////////////////////////////////////
 // Publics
@@ -28,6 +29,23 @@ void BasicWidget::keyReleaseEvent(QKeyEvent* keyEvent) {
         qDebug() << "Right Arrow Pressed";
         update();  // We call update after we handle a key press to trigger a
                    // redraw when we are ready
+    } else if (keyEvent->key() == Qt::Key_W) {
+        qDebug() << "W Pressed";
+        makeCurrent();
+
+        WIREFRAME = !WIREFRAME;
+        if (WIREFRAME) {
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+        } else {
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        }
+
+        update();  // We call update after we handle a key press to trigger a
+                   // redraw when we are ready
+    } else if (keyEvent->key() == Qt::Key_Q) {
+        qDebug() << "Q Pressed";
+        exit(0);
     } else {
         qDebug() << "You Pressed an unsupported Key!";
     }
@@ -38,69 +56,24 @@ void BasicWidget::initializeGL() {
     initializeOpenGLFunctions();
 
     qDebug() << QDir::currentPath();
-    std::cout << "111111111111 Make it??????"
-              << "";
 
-    Renderable* house = makeHouse(QVector3D(0, 0, 0));
-
-    std::cout << "22222222222222222 Make it??????"
-              << "";
-
-    // QMatrix4x4 transform;
-    // transform.setToIdentity();
-    // transform.translate(1,0,0);
-    // house->setModelMatrix(transform);
-    // house->setRotationAxis(QVector3D(0,1,0));
-    // house->setRotationSpeed(7.0f);
+    Renderable* house = makeObject(objFile, texFile, QVector3D(0, 0, 0));
     glViewport(0, 0, width(), height());
     frameTimer_.start();
 }
 
-Renderable* BasicWidget::makeHouse(QVector3D offset) {
-    QString texFile = "objects/house/house_diffuse.ppm";
+Renderable* BasicWidget::makeObject(std::string objFile, std::string texFile, QVector3D offset) {
+    // ./App"objects/house/house_obj.obj" "objects/house/house_diffuse.ppm"
+    texFile = "objects/house/house_diffuse.ppm";
     ObjParse parser = ObjParse();
-    parser.parse("objects/monkey_centered.obj");
-    std::cout << "333333333333 Make it??????"
-              << "";
+    parser.parse("objects/house/house_obj.obj");
+    parser.parse(objFile);
 
-    // PPM texturePPM = PPM("cat3.ppm");
-    QVector<QVector3D> pos = parser.getVerts3D();
-    QVector<QVector3D> norm;
-    QVector<QVector2D> texCoord = parser.getVTData2D();
-    QVector<unsigned int> idx =
-        QVector<unsigned int>::fromStdVector(parser.getIdx());
-
-    // QVector<unsigned int> idx;
-    // pos << QVector3D(-0.8 + offset.x(), -0.8 + offset.y(), 0.0 + offset.z());
-    // pos << QVector3D(0.8 + offset.x(), -0.8 + offset.y(), 0.0 + offset.z());
-    // pos << QVector3D(-0.8 + offset.x(), 0.8 + offset.y(), 0.0 + offset.z());
-    // pos << QVector3D(0.8 + offset.x(), 0.8 + offset.y(), 0.0 + offset.z());
-    // We don't actually use the normals right now, but this will be useful
-    // later!
-    norm << QVector3D(0.0, 0.0, 1.0);
-    norm << QVector3D(0.0, 0.0, 1.0);
-    norm << QVector3D(0.0, 0.0, 1.0);
-    norm << QVector3D(0.0, 0.0, 1.0);
-    // TODO:  Make sure to add texture coordinates to pass into the
-    // initialization of our renderable idx << 0 << 1 << 2 << 2 << 1 << 3;
-    // texCoord << QVector2D(1, 1);
-    // texCoord << QVector2D(0, 1);
-    // texCoord << QVector2D(1, 0);
-    // texCoord << QVector2D(0, 0);
-    std::cout << "444444444 Make it??????"
-              << "";
+    QVector<unsigned int> idx = QVector<unsigned int>::fromStdVector(parser.getIdx());
 
     Renderable* ren = new Renderable();
-    std::cout << "555555 Make it??????"
-              << "";
-
-    ren->init(pos, norm, texCoord, idx, texFile);
-    std::cout << "66666666 Make it??????"
-              << "";
-
+    ren->init(parser.vertextures, idx, QString::fromStdString(texFile));
     renderables_.push_back(ren);
-    std::cout << "77777777Make it??????"
-              << "";
     return ren;
 }
 
@@ -117,8 +90,6 @@ void BasicWidget::resizeGL(int w, int h) {
         });
         logger_.startLogging();
     }
-    std::cout << "Make it??????"
-              << "";
     glViewport(0, 0, w, h);
     view_.setToIdentity();
     view_.lookAt(QVector3D(0.0f, 0.0f, 2.0f), QVector3D(0.0f, 0.0f, 0.0f),
@@ -130,7 +101,7 @@ void BasicWidget::resizeGL(int w, int h) {
 
 void BasicWidget::paintGL() {
     qint64 msSinceRestart = frameTimer_.restart();
-    glDisable(GL_DEPTH_TEST);
+    glEnable(GL_DEPTH_TEST);
     glDisable(GL_CULL_FACE);
 
     glClearColor(0.f, 0.f, 0.f, 1.f);

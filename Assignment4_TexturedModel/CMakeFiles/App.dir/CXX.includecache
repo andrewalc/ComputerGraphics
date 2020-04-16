@@ -6,12 +6,60 @@
 
 #IncludeRegexTransform: 
 
-/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.cpp
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.cpp
+BasicWidget.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/BasicWidget.h
+QtGui
+-
+QtWidgets
+-
+QtOpenGL
+-
 Renderable.h
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
+ObjParse.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
+PPM.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/ObjParse.h
 QtGui
 -
 QtOpenGL
+-
+QtWidgets
+-
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+Vertexture.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Vertexture.h
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/PPM.h
+QtCore
+-
+QtGui
+-
+QtOpenGL
+-
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
 -
 
 /Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Renderable.h
@@ -23,10 +71,16 @@ QtOpenGL
 -
 iostream
 -
+Vertexture.h
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Vertexture.h
+
+/Users/andrewalc/Documents/Projects/Graphics/ComputerGraphics/Assignment4_TexturedModel/Vertexture.h
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 
 /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
+
+/Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidgets
 

@@ -5,7 +5,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QtOpenGL>
-
+#include <iostream>
 // TODO:  you have to include whatever application-specific code there is here.
 // This should be a subclass of QMainWindow! Lab application
 #include "App.h"
@@ -14,7 +14,6 @@ int main(int argc, char** argv) {
     QApplication a(argc, argv);
     QString appDir = a.applicationDirPath();
     QDir::setCurrent(appDir);
-
     QSurfaceFormat fmt;
     fmt.setDepthBufferSize(24);
     fmt.setStencilBufferSize(8);
@@ -25,6 +24,8 @@ int main(int argc, char** argv) {
     // TODO:  Replace the following 3 lines with whatever you need to create,
     // show, and execute your application
     App app;
+    app.objFile = argv[1];
+    app.texFile = argv[2];
     app.show();
     return QApplication::exec();
 }

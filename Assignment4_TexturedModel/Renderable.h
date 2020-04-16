@@ -4,6 +4,7 @@
 #include <QtGui>
 #include <QtOpenGL>
 #include <iostream>
+#include "Vertexture.h"
 class Renderable {
    protected:
     // Each renderable has its own model matrix
@@ -38,6 +39,7 @@ class Renderable {
     // currently don't use normals in our implementation, but the array is
     // checked for the appropriate size.  The values can be all 0, but must be
     // the same size as the position array!
+    virtual void init(const QVector<Vertexture>& vts, const QVector<unsigned int>& indexes, const QString& textureFile);
     virtual void init(const QVector<QVector3D>& positions,
                       const QVector<QVector3D>& normals,
                       const QVector<QVector2D>& texCoords,

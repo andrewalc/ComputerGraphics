@@ -13,6 +13,8 @@ class App : public QMainWindow
 public:
   App(QWidget* parent=0);
   virtual ~App();
+  std::string objFile;
+  std::string texFile;
   
 signals:
 

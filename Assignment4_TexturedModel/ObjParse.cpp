@@ -1,5 +1,4 @@
 #include "ObjParse.h"
-
 // Parse data from .obj
 void ObjParse::parse(std::string fileName) {
     std::ifstream inFile;
@@ -27,18 +26,22 @@ void ObjParse::parse(std::string fileName) {
                 }
                 verts.push_back(std::stof(line.substr(lastSpace)));
             }
-            if (tag == "vt ") {
-                int lastSpace = 3;
+            if (tag == "vt") {
                 int i = 3;
+                std::string numBuffer = "";
                 while (i < line.length()) {
-                    if (line.at(i) == ' ') {
-                        vertTextures.push_back(
-                            std::stof(line.substr(lastSpace, i - lastSpace)));
-                        lastSpace = i;
+                    if (line.at(i) == '/' || line.at(i) == ' ' ||
+                        line.at(i) == '\n') {
+                        vertTextures.push_back(std::stof(numBuffer));
+                        numBuffer = "";
+                    } else {
+                        // add the char to the buffer
+                        numBuffer += line.at(i);
                     }
                     i++;
                 }
-                vertTextures.push_back(std::stof(line.substr(lastSpace)));
+                vertTextures.push_back(std::stof(numBuffer));
+                numBuffer = "";
             }
             if (tag == "vn ") {
                 int lastSpace = 3;
@@ -54,46 +57,69 @@ void ObjParse::parse(std::string fileName) {
                 vertNormals.push_back(std::stof(line.substr(lastSpace)));
             }
             if (tag == "f ") {
-                int lastSpace = 2;
                 int i = 2;
+                std::string numBuffer = "";
                 while (i < line.length()) {
-                    if (line.at(i) == '/') {
-                        line[i] = ' ';
+                    if (line.at(i) == '/' || line.at(i) == ' ' ||
+                        line.at(i) == '\n') {
+                        face.push_back(std::stoi(numBuffer));  // indices are 1 based, subtract 1
+                        numBuffer = "";
+                    } else {
+                        // add the char to the buffer
+                        numBuffer += line.at(i);
                     }
                     i++;
                 }
-                i = 2;
-                while (i < line.length()) {
-                    if (line.at(i) == ' ') {
-                        std::string numberStr =
-                            line.substr(lastSpace, i - lastSpace);
-                        if (numberStr != " ") {
-                            face.push_back(std::stoi(numberStr) - 1);
-                        }
-                        lastSpace = i;
-                    }
-                    i++;
-                }
-                face.push_back(std::stoi(line.substr(lastSpace)) - 1);
+                face.push_back(std::stoi(numBuffer));
+                numBuffer = "";
+                faces.push_back(face);
             }
             faces.push_back(face);
         }
         inFile.close();
     }
+
+    QVector<QVector3D> verts = getVerts3D();
+    QVector<QVector2D> VTData = getVTData2D();
+
+    for (int i = 0; i < faces.size(); i++) {         // each line
+        for (int j = 0; j < faces[i].size(); j++) {  // each num
+            if (j % 3 == 0) {
+                std::cout << faces[i][j] << " / " <<  faces[i][j+1] << "\n";
+                QVector3D position = verts.at(faces[i][j] - 1);
+                QVector2D texture = VTData.at(faces[i][j + 1] - 1);
+                Vertexture vt =
+                    Vertexture(position.x(), position.y(), position.z(),
+                               texture.x(), texture.y());
+                if (!vertextures.contains(vt)) {
+                    vertextures.push_back(vt);
+                }
+                idx.push_back(vertextures.indexOf(vt));
+            }
+        }
+    }
+    std::cout << "verts len " <<  verts.size() << "\n";
+    std::cout << "VTDATA len " <<  VTData.size() << "\n";
+    std::cout << "vertextures len " <<  vertextures.size() << "\n";
+
 }
 
 QVector<QVector2D> ObjParse::getVTData2D() {
     QVector<QVector2D> vertTextureData;
     QVector2D vector;
+    int xCount = 0;
+    int yCount = 0;
     for (int i = 0; i < vertTextures.size(); i++) {
-        int value = vertTextures[i];
+        float value = vertTextures[i];
         if (i % 2 == 0) {
-            std::cout << "VT A : " << vertTextures[i] << "\n";
-            vector.setX(value);
+            vector.setX(value * -1);
+            xCount++;
         } else if (i % 2 == 1) {
-            std::cout << "VT B : " << vertTextures[i] << "\n";
-            vector.setY(value);
-            vertTextureData.push_back(vector);
+            yCount++;
+            vector.setY(value * -1);
+            if (!vertTextureData.contains(vector)) {
+                vertTextureData.push_back(vector);
+            }
         }
     }
     return vertTextureData;
@@ -105,44 +131,17 @@ QVector<QVector3D> ObjParse::getVerts3D() {
     for (int i = 0; i < verts.size(); i++) {
         if (i % 3 == 0) {
             vector.setX(verts[i]);
-            // std::cout << "VEC X : " << verts[i] << "\n";
         } else if (i % 3 == 1) {
-            // std::cout << "VEC Y : " << verts[i] << "\n";
             vector.setY(verts[i]);
         } else if (i % 3 == 2) {
-            // std::cout << "VEC Z : " << verts[i] << "\n";
             vector.setZ(verts[i]);
             vertsVector.push_back(vector);
         }
     }
+    std::cout << "Verts length " << vertsVector.length() << "\n";
     return vertsVector;
 }
 
-std::vector<unsigned int> ObjParse::getIdx() {
-    std::vector<unsigned int> idx;
-    for (int i = 0; i < faces.size(); i++) {
-        if (faces[i].size() > 0) {
-            for (int j = 0; j < faces[i].size(); j++) {
-                if (j % 2 == 0) {
-                    idx.push_back(faces[i][j]);
-                }
-            }
-        }
-    }
-    return idx;
-}
-
-std::vector<unsigned int> ObjParse::getIdx(
-    std::vector<std::vector<unsigned int>> faces) {
-    std::vector<unsigned int> idx;
-    for (int i = 0; i < faces.size(); i++) {
-        if (faces[i].size() > 0) {
-            for (int j = 0; j < faces[i].size(); j++) {
-                if (j % 2 == 0) {
-                    idx.push_back(faces[i][j]);
-                }
-            }
-        }
-    }
+std::vector<unsigned int> ObjParse::getIdx() {    
     return idx;
 }

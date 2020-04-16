@@ -19,5 +19,7 @@ void App::buildGui()
 
   // Our basic widget.
   BasicWidget* widget = new BasicWidget(this);
+  widget->objFile = objFile;
+  widget->texFile = texFile;
   setCentralWidget(widget);
 }

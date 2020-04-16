@@ -7,6 +7,7 @@ CMakeFiles/App.dir/App.cpp.o: BasicWidget.h
 CMakeFiles/App.dir/App.cpp.o: ObjParse.h
 CMakeFiles/App.dir/App.cpp.o: PPM.h
 CMakeFiles/App.dir/App.cpp.o: Renderable.h
+CMakeFiles/App.dir/App.cpp.o: Vertexture.h
 CMakeFiles/App.dir/App.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/App.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 CMakeFiles/App.dir/App.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
@@ -20,6 +21,7 @@ CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: BasicWidget.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: ObjParse.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: PPM.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: Renderable.h
+CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: Vertexture.h
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
@@ -30,6 +32,7 @@ CMakeFiles/App.dir/BasicWidget.cpp.o: BasicWidget.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: ObjParse.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: PPM.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: Renderable.h
+CMakeFiles/App.dir/BasicWidget.cpp.o: Vertexture.h
 CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
@@ -37,12 +40,14 @@ CMakeFiles/App.dir/BasicWidget.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/Qt
 
 CMakeFiles/App.dir/ObjParse.cpp.o: ObjParse.cpp
 CMakeFiles/App.dir/ObjParse.cpp.o: ObjParse.h
+CMakeFiles/App.dir/ObjParse.cpp.o: Vertexture.h
 CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
 CMakeFiles/App.dir/ObjParse.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtWidgets.framework/QtWidgets
 
 CMakeFiles/App.dir/Renderable.cpp.o: Renderable.cpp
 CMakeFiles/App.dir/Renderable.cpp.o: Renderable.h
+CMakeFiles/App.dir/Renderable.cpp.o: Vertexture.h
 CMakeFiles/App.dir/Renderable.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtCore.framework/QtCore
 CMakeFiles/App.dir/Renderable.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtGui.framework/QtGui
 CMakeFiles/App.dir/Renderable.cpp.o: /Users/andrewalc/Qt/5.14.0/clang_64/lib/QtOpenGL.framework/QtOpenGL
