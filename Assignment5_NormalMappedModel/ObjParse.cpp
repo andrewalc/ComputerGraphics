@@ -104,10 +104,10 @@ void ObjParse::parse(std::string fileName) {
             }
         }
     }
-    std::cout << "verts len " <<  verts.size() << "\n";
-    std::cout << "normals len " <<  normals.size() << "\n";
-    std::cout << "VTDATA len " <<  VTData.size() << "\n";
-    std::cout << "vertextures len " <<  vertextures.size() << "\n";
+    // std::cout << "verts len " <<  verts.size() << "\n";
+    // std::cout << "normals len " <<  normals.size() << "\n";
+    // std::cout << "vertex texture len " <<  VTData.size() << "\n";
+    // std::cout << "vertextures len " <<  vertextures.size() << "\n";
 
 }
 
@@ -145,7 +145,7 @@ QVector<QVector3D> ObjParse::getVerts3D() {
             vertsVector.push_back(vector);
         }
     }
-    std::cout << "Verts length " << vertsVector.length() << "\n";
+    // std::cout << "Verts length " << vertsVector.length() << "\n";
     return vertsVector;
 }
 
@@ -162,7 +162,7 @@ QVector<QVector3D> ObjParse::getNormals3D() {
             normVector.push_back(vector);
         }
     }
-    std::cout << " get normals len" << vertNormals.size() << "\n";
+    // std::cout << " get normals len" << vertNormals.size() << "\n";
     return normVector; 
 }
 

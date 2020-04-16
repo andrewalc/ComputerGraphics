@@ -99,9 +99,7 @@ void BasicWidget::mouseReleaseEvent(QMouseEvent* mouseEvent) {
 Renderable* BasicWidget::makeObject(std::string objFile, std::string texFile,
                                     QVector3D offset) {
     // ./App"objects/house/house_obj.obj" "objects/house/house_diffuse.ppm"
-    texFile = "objects/house/house_diffuse.ppm";
     ObjParse parser = ObjParse();
-    parser.parse("objects/house/house_obj.obj");
     parser.parse(objFile);
 
     QVector<unsigned int> idx =
@@ -115,6 +113,7 @@ Renderable* BasicWidget::makeObject(std::string objFile, std::string texFile,
     backXform.rotate(QQuaternion::fromEulerAngles(QVector3D(0,260,0)));
     ren->setModelMatrix(backXform);
     renderables_.push_back(ren);
+    std::cout << "object " <<  objFile << " created " << std::endl;
     return ren;
 }
 
@@ -123,7 +122,7 @@ void BasicWidget::initializeGL() {
     initializeOpenGLFunctions();
 
     qDebug() << QDir::currentPath();
-    Renderable* house = makeObject("objFile", "texFile", QVector3D(0, 0, 0));
+    Renderable* house = makeObject("objects/house/house_obj.obj", "objects/house/house_diffuse.ppm", QVector3D(0, 0, 0));
 
     // TODO:  You may have to change these paths.
     QString brickTex = "../objects/brickWall_highRes/brickWall_diffuse.ppm";

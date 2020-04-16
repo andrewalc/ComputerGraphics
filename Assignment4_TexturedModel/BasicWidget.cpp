@@ -57,16 +57,14 @@ void BasicWidget::initializeGL() {
 
     qDebug() << QDir::currentPath();
 
-    Renderable* house = makeObject(objFile, texFile, QVector3D(0, 0, 0));
+    Renderable* house = makeObject("objects/house/house_obj.obj", "objects/house/house_diffuse.ppm", QVector3D(0, 0, 0));
     glViewport(0, 0, width(), height());
     frameTimer_.start();
 }
 
 Renderable* BasicWidget::makeObject(std::string objFile, std::string texFile, QVector3D offset) {
     // ./App"objects/house/house_obj.obj" "objects/house/house_diffuse.ppm"
-    texFile = "objects/house/house_diffuse.ppm";
     ObjParse parser = ObjParse();
-    parser.parse("objects/house/house_obj.obj");
     parser.parse(objFile);
 
     QVector<unsigned int> idx = QVector<unsigned int>::fromStdVector(parser.getIdx());
@@ -74,6 +72,7 @@ Renderable* BasicWidget::makeObject(std::string objFile, std::string texFile, QV
     Renderable* ren = new Renderable();
     ren->init(parser.vertextures, idx, QString::fromStdString(texFile));
     renderables_.push_back(ren);
+    std::cout << "object " <<  objFile << " created " << std::endl;
     return ren;
 }
 

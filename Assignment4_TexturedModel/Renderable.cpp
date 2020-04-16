@@ -48,17 +48,6 @@ void Renderable::createShaders() {
     }
 }
 void Renderable::init(const QVector<Vertexture>& vts, const QVector<unsigned int>& indexes, const QString& textureFile) {
-        // NOTE:  We do not currently do anything with normals -- we just
-    // have it here for a later implementation!
-    // We need to make sure our sizes all work out ok.
-    if (vts.size() != indexes.size()) {
-        std::cout << "vts length " << vts.size() << "\n";
-        std::cout << "indexes length " << indexes.size() << "\n";
-
-        qDebug() << "[Renderable]::init() -- positions size mismatch with "
-                    "normals/texture coordinates";
-        // return;
-    }
 
     // Set our model matrix to identity
     modelMatrix_.setToIdentity();

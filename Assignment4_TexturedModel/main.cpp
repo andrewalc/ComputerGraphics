@@ -24,8 +24,6 @@ int main(int argc, char** argv) {
     // TODO:  Replace the following 3 lines with whatever you need to create,
     // show, and execute your application
     App app;
-    app.objFile = argv[1];
-    app.texFile = argv[2];
     app.show();
     return QApplication::exec();
 }

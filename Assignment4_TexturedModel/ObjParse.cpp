@@ -62,7 +62,8 @@ void ObjParse::parse(std::string fileName) {
                 while (i < line.length()) {
                     if (line.at(i) == '/' || line.at(i) == ' ' ||
                         line.at(i) == '\n') {
-                        face.push_back(std::stoi(numBuffer));  // indices are 1 based, subtract 1
+                        face.push_back(std::stoi(
+                            numBuffer));  // indices are 1 based, subtract 1
                         numBuffer = "";
                     } else {
                         // add the char to the buffer
@@ -85,7 +86,7 @@ void ObjParse::parse(std::string fileName) {
     for (int i = 0; i < faces.size(); i++) {         // each line
         for (int j = 0; j < faces[i].size(); j++) {  // each num
             if (j % 3 == 0) {
-                std::cout << faces[i][j] << " / " <<  faces[i][j+1] << "\n";
+                // std::cout << faces[i][j] << " / " <<  faces[i][j+1] << "\n";
                 QVector3D position = verts.at(faces[i][j] - 1);
                 QVector2D texture = VTData.at(faces[i][j + 1] - 1);
                 Vertexture vt =
@@ -98,10 +99,9 @@ void ObjParse::parse(std::string fileName) {
             }
         }
     }
-    std::cout << "verts len " <<  verts.size() << "\n";
-    std::cout << "VTDATA len " <<  VTData.size() << "\n";
-    std::cout << "vertextures len " <<  vertextures.size() << "\n";
-
+    // std::cout << "verts len " <<  verts.size() << "\n";
+    // std::cout << "VTDATA len " <<  VTData.size() << "\n";
+    // std::cout << "vertextures len " <<  vertextures.size() << "\n";
 }
 
 QVector<QVector2D> ObjParse::getVTData2D() {
@@ -138,10 +138,8 @@ QVector<QVector3D> ObjParse::getVerts3D() {
             vertsVector.push_back(vector);
         }
     }
-    std::cout << "Verts length " << vertsVector.length() << "\n";
+    //std::cout << "Verts length " << vertsVector.length() << "\n";
     return vertsVector;
 }
 
-std::vector<unsigned int> ObjParse::getIdx() {    
-    return idx;
-}
+std::vector<unsigned int> ObjParse::getIdx() { return idx; }
